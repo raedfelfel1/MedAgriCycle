@@ -1,6 +1,6 @@
 export default {
   extra: {
-    API_IP: "https://anabella-fulminatory-skiagraphically.ngrok-free.dev/api"
+    API_IP: "https://medagricycle-1.onrender.com/api"
   }
 };
 
