@@ -1,0 +1,135 @@
+:root {
+  --primary-color: #43a047;         /* Vert naturel */
+  --primary-dark: #2e7d32;
+  --accent-color: #a5d6a7;          /* Vert clair doux */
+  --background: #f5f5f5;
+  --text-dark: #263238;
+  --text-light: #607d8b;
+  --border-radius: 1rem;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* 📦 Conteneur principal du formulaire */
+.farm-form-container {
+  max-width: 70%;
+  margin-top:4vh;
+  margin-left:40vmin;
+  padding: 4vh 5vw;
+  border-radius: var(--border-radius);
+  background-color: hsl(125, 39%, 94%);
+  box-shadow: var(--shadow);
+}
+
+/* 🧾 Titre */
+.form-title {
+  color: var(--primary-dark);
+  margin-bottom: 3vh;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.title-icon {
+  margin-right: 1rem;
+  color: var(--primary-color);
+  font-size: 2.2rem !important;
+}
+
+/* 🖊️ Champs de formulaire */
+.MuiTextField-root {
+  margin-bottom: 2vh;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: var(--border-radius) !important;
+  background-color: #fafafa;
+}
+
+.MuiInputLabel-root {
+  color: var(--text-light) !important;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-color) !important;
+}
+
+.MuiInputAdornment-root svg {
+  color: var(--primary-color);
+}
+
+/* 🧵 Boutons */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vh;
+}
+
+.submit-button, .nav-button {
+  padding: 1rem 2rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius) !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.back-button{
+  height:8vh;
+  border-radius: var(--border-radius) !important;
+  background-color: var(--primary-dark) !important;
+}
+
+.submit-button {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-dark) !important;
+  transform: scale(1.02);
+}
+
+.nav-button {
+  background-color:var(--primary-color) !important;
+  color: var(--primary-dark) !important;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-dark) !important;
+  transform: scale(1.02);
+}
+
+.back-button{
+  background-color:var(--primary-dark) !important;
+  color: white !important;
+}
+
+.back-button:hover {
+  background-color: var(--primary-color) !important;
+  transform: scale(1.02);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+  }
+
+  .form-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .submit-button, .nav-button {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,357 @@
+/* ===== Mode sombre ===== */
+.user-container.dark {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.user-container.dark .user-header {
+    background: linear-gradient(135deg, #2d3b2d 0%, #1b2e1b 100%);
+}
+
+.user-container.dark .user-info h2 {
+    color: #a5d6a7;
+}
+
+.user-container.dark .user-info p {
+    color: #b0bec5;
+}
+
+.user-container.dark .user-section {
+    background-color: #252525;
+    border-color: #333;
+}
+
+.user-container.dark .section-icon,
+.user-container.dark .user-section h3 {
+    color: #81c784;
+    border-bottom-color: #333;
+}
+
+.user-container.dark .info-item label {
+    color: #ccc;
+}
+
+.user-container.dark .info-item input {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: #fff;
+}
+
+.user-container.dark .info-item input:focus {
+    border-color: #66bb6a;
+}
+
+.user-container.dark .info-item input:read-only {
+    background-color: #222;
+}
+
+/* Container principal : compact et centré verticalement */
+.user-container {
+  max-width: 100vh;
+  width: 98%;
+  max-height: 98vh;
+  height: auto;
+  margin: 1vh auto;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.5vh 2vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* En-tête compact */
+.user-header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 1.5vh 2vw;
+  border-radius: 10px;
+  gap: 1.5rem;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin-bottom: 2vh;
+}
+
+.user-avatar {
+  width: 10vh;
+  height: 10vh;
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 100px;
+  max-height: 100px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  font-weight: bold;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  transition: transform 0.3s;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1b5e20;
+}
+
+.user-info p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-1px);
+}
+
+.edit-button.confirm {
+  background-color: #2196f3;
+}
+
+.edit-button.confirm:hover {
+  background-color: #1976d2;
+}
+
+.edit-button.delete {
+  background-color: #ef5350;
+}
+
+.edit-button.delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Sections */
+.user-section {
+  padding: 2vh 2vw;
+  background-color: #fcfcfc;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 2vh;
+  flex-shrink: 0;
+}
+
+.user-section:last-child {
+  margin-bottom: 0;
+}
+
+.user-section h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin: 0 0 2vh 0;
+  border-bottom: 1px solid #e8f5e9;
+  padding-bottom: 1vh;
+}
+
+.section-icon {
+  margin-right: 10px;
+  color: #4caf50;
+  font-size: 1.3rem;
+}
+
+/* Grille aérée et alignée */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem 2.5rem;
+  align-items: start;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info-item label {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #444;
+  font-size: 0.95rem;
+  height: 1.5rem;
+}
+
+.icon-inline {
+  font-size: 1.2rem;
+  color: #66bb6a;
+  margin-right: 8px;
+  display: flex;
+}
+
+.info-item input {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  height: 2.8rem;
+  transition: all 0.2s;
+}
+
+.info-item input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.info-item input:read-only {
+  background-color: #f9f9f9;
+  border-color: #eee;
+  color: #666;
+}
+
+.error-text {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.dark-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #4caf50;
+  font-size: 1.3rem;
+  padding: 0.2rem;
+}
+
+/* ========== Responsive ========== */
+
+/* ── Mobile : ≤ 480px ── */
+@media screen and (max-width: 480px) {
+  .user-container {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 1rem;
+    overflow-y: auto;
+    padding-bottom: 20%;
+  }
+
+  .user-header {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-status {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-item input {
+    height: 2.8rem;
+  }
+}
+
+/* ── Tablette : 481px – 768px ── */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .user-container {
+    width: 100%;
+    margin: 1vh auto;
+    border-radius: 10px;
+    padding-bottom: 10vh;
+    overflow-y: scroll;
+  }
+
+  .user-header {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+  }
+
+  .info-item input {
+    height: 2.8rem;
+  }
+}
+
+/* ── Desktop : ≥ 769px ── */
+@media screen and (min-width: 769px) {
+  .user-container {
+    margin: auto;
+    overflow-y: auto;
+  }
+
+  .user-header {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem 2.5rem;
+  }
+}

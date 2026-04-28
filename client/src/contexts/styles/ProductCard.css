@@ -1,0 +1,195 @@
+/* Container principal */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  overflow-y: scroll;
+}
+
+/* Carte produit */
+.product-card {
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.05);
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Ligne d’informations */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color:#2563eb;
+}
+
+/* Bloc info individuel */
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1 1 48%;
+}
+
+/* Nom du produit */
+.product-title {
+  color: #1e40af; /* bleu foncé */
+  font-weight: 700;
+  font-size: 1.25rem;
+  word-wrap: break-word;
+  margin-bottom: 0.25rem;
+}
+
+/* Champs et labels */
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1d4ed8; 
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.field input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  color: #3067df;
+  width: 100%;
+  background-color: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Lecture seule */
+.field input[readonly] {
+  background-color: #f3f4f6;
+  color: #1d4ed8;
+  cursor: not-allowed;
+}
+
+/* Séparateur */
+.separator {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0.5rem 0;
+}
+
+/* Actions */
+.action-icons {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.icon {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.icon.edit:hover,
+.icon.locate:hover {
+  color: #2563eb;
+}
+
+.icon.delete {
+  color: #ef4444;
+}
+
+.icon.delete:hover {
+  color: #b91c1c;
+}
+
+.icon.confirm {
+  color: #10b981;
+}
+
+.icon.confirm:hover {
+  color: #059669;
+}
+
+/* Date d'ajout et petites infos */
+.info-item span {
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .product-container {
+    justify-content: center;
+  }
+
+  .product-card {
+    max-width: 45%;
+    flex: 1 1 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .product-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .info-item {
+    flex: 1 1 100%;
+  }
+
+  .product-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info-row {
+    flex-direction: column;
+  }
+
+  .action-icons {
+    justify-content: space-between;
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+}

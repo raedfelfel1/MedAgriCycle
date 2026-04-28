@@ -1,0 +1,307 @@
+/* ===== VARIABLES ===== */
+:root {
+  --color-bg-light: #f5f7fa;
+  --color-bg-dark: #1e1e2f;
+  --color-primary: #4caf50;
+  --color-secondary: #2f4050;
+  --color-text-light: #222;
+  --color-text-dark: #eee;
+  --color-card-bg: #ffffff;
+  --color-card-bg-dark: #2a2a3d;
+  --border-radius: 12px;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --transition: 0.3s ease;
+}
+
+/* ===== BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+body.dark-mode {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+/* ===== LAYOUT ===== */
+.settings-pro-page {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 10vh;
+}
+
+.settings-pro-main {
+  flex: 1;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+  min-width: 0; /* évite le débordement en flexbox */
+}
+
+/* ===== TITRE ===== */
+.settings-title {
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.6rem); /* fluid typography */
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.04em;
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+}
+
+/* ===== GRILLE DES CARTES ===== */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ===== CARTE ===== */
+.setting-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: background-color var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 180px; /* remplace 30vh qui est imprévisible */
+}
+
+.setting-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .setting-card {
+  background-color: var(--color-card-bg-dark);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== HEADER CARTE ===== */
+.setting-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== TITRES ===== */
+.setting-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: var(--color-secondary);
+}
+
+body.dark-mode .setting-card h2 {
+  color: #b8c1d2;
+}
+
+/* ===== PARAGRAPHES ===== */
+.setting-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+body.dark-mode .setting-card p {
+  color: #a0a9bf;
+}
+
+/* ===== SELECT ===== */
+select {
+  width: 100%;
+  padding: 0.55rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none; /* style natif supprimé pour cohérence cross-browser */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+body.dark-mode select {
+  background-color: #3b3b57;
+  border-color: #555;
+  color: var(--color-text-dark);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23aaa' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+}
+
+select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* ===== TOGGLE SWITCH ===== */
+.switch {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color var(--transition);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform var(--transition);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* focus visible pour accessibilité */
+.switch input:focus-visible + .slider {
+  outline: 3px solid rgba(76, 175, 80, 0.5);
+  outline-offset: 2px;
+}
+
+/* ===== CHECKBOX ===== */
+.checkbox-container {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  color: var(--color-secondary);
+  line-height: 1.4;
+}
+
+body.dark-mode .checkbox-container {
+  color: #b8c1d2;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color var(--transition);
+}
+
+body.dark-mode .checkmark {
+  background-color: #3b3b57;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--color-primary);
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.checkbox-container input:focus-visible ~ .checkmark {
+  outline: 3px solid rgba(76, 175, 80, 0.5);
+  outline-offset: 2px;
+}
+
+/* ===== RESPONSIVE — TABLETTE ===== */
+@media (max-width: 900px) {
+  .settings-pro-main {
+    padding: 2rem;
+  }
+
+  .settings-grid {
+    gap: 1rem;
+  }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 600px) {
+  .settings-pro-main {
+    padding: 1.25rem 1rem;
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr; /* 1 colonne sur mobile */
+  }
+
+  .setting-card {
+    padding: 1.25rem 1.5rem;
+    min-height: unset;
+  }
+
+  .setting-card h2 {
+    font-size: 1.1rem;
+  }
+
+  select {
+    font-size: 0.9rem;
+  }
+}

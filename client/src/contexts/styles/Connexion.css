@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --font-base: 1rem;
+  --color-red: #d32f2f;
+  --color-white: #ffffff;
+  --color-gray: #ccc;
+  --color-dark: #2d2d2d;
+  --color-bg: #f3f3f3;
+}
+.google-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.google-button:hover {
+  background-color: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  font-size: var(--font-base);
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 2vh 5vw;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 26rem;
+  margin-right: 1rem;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.lock-icon {
+  font-size: 3rem;
+  color: rgb(43, 232, 122);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+  font-size: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 2rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.show-button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.85rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+.forgot-password {
+  color: #d9534f;
+  text-decoration: none;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: rgb(43, 232, 122);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.login-button:hover {
+  background-color: rgb(43, 232, 122);
+  ;
+}
+
+.create-account-button {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--color-white);
+  color: #333;
+  border: 1px solid var(--color-gray);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin: -0.5rem 0 0.75rem;
+}
+
+.create-account-button:hover {
+  background-color: rgb(43, 232, 122);
+  ;
+}

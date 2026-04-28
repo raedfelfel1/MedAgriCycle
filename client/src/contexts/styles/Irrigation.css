@@ -1,0 +1,237 @@
+/* Irrigation.css */
+.light-theme {
+  --primary-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --accent-color: #3b82f6;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+.dark-theme {
+  --primary-bg: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --accent-color: #60a5fa;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --error-color: #f87171;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.irrigation-dashboard {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  margin-left:40vmin;
+}
+
+.dashboard-card {
+  background-color: var(--card-bg) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-navigation {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.info-panel, .control-panel, .history-panel, .analytics-panel {
+  background-color: var(--card-bg) !important;
+  padding: 20px;
+  border-radius: 10px !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  color: var(--accent-color);
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem !important;
+}
+
+.water-level-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.water-info {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.tank-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.irrigation-controls {
+  padding: 12px 0;
+}
+
+.irrigate-button {
+  padding: 10px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-size: 0.95rem !important;
+  box-shadow: 0 3px 6px rgba(59, 130, 246, 0.25) !important;
+  transition: all 0.2s ease !important;
+  margin-top: 8px;
+}
+
+.irrigate-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(59, 130, 246, 0.35) !important;
+}
+
+.quick-action-btn {
+  min-width: 60px !important;
+  padding: 6px 8px !important;
+}
+
+.history-item {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
+  transition: background-color 0.2s ease;
+}
+
+.history-item:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+@keyframes water-shimmer {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(500%);
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .irrigation-dashboard {
+    padding: 15px;
+  }
+  
+  .info-panel, .control-panel, .history-panel, .analytics-panel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-header h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  .tab-navigation {
+    justify-content: center;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Grid adjustments for compact layout */
+.MuiGrid-item {
+  display: flex;
+}
+
+.MuiPaper-root {
+  overflow: hidden;
+}
+
+/* Button styles */
+.MuiButton-root {
+  border-radius: 6px !important;
+}
+
+.MuiAlert-root {
+  border-radius: 6px !important;
+  margin-top: 12px;
+  padding: 8px 12px !important;
+}
+
+.MuiAlert-message {
+  padding: 4px 0 !important;
+}
+
+/* Slider styles */
+.MuiSlider-root {
+  margin: 10px 0 !important;
+}
+
+/* Text field styles */
+.MuiTextField-root {
+  margin: 8px 0 !important;
+}
+
+.MuiInputBase-input {
+  padding: 10px 12px !important;
+}

@@ -1,0 +1,184 @@
+.board-container {
+  padding: 2rem;
+  background-color: #f9fafb;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.chart-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.recommendations-section {
+  margin-top: 2rem;
+  width: 100%;
+  
+}
+
+.recommendations-table {
+  width: 100%; 
+  border-collapse: collapse;
+  table-layout:fixed;
+}
+
+.recommendations-table th,
+.recommendations-table td {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding:0;
+ 
+}
+
+/* Fixer la largeur des colonnes */
+
+.recommendations-table td:nth-child(1) { width: 10%; } /* Ferme */
+.recommendations-table td:nth-child(2) { width: 20%; } /* Date */
+.recommendations-table td:nth-child(3) { width: 10%; } /* Produit */
+.recommendations-table td:nth-child(4) { width: 60%;
+ word-wrap: break-word;
+  white-space: normal; } /* Recommandation */
+
+.recommendations-table th {
+  background-color: #f4f4f4;
+}
+
+
+
+.recommendations-section h3 {
+  margin-bottom: 1rem;
+}
+
+.recommendations-table tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+.recommendations-table tr:hover td {
+  background-color: #e0f2e9;
+}
+
+
+@media screen and (max-width: 1024px){
+  .board-container {
+    margin-left: 11vmin;
+    min-height: 50vh;
+    padding-left: 0;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .chart-card {
+    margin-right: 2vmin;
+  }
+}
+
+
+.recommendations-section {
+  margin-top: 2rem;
+  background: var(--card-bg, #fff);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.05);
+  width: 100%;
+  overflow-x: auto; /* scroll horizontal si trop large */
+}
+
+.recommendations-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout:auto; 
+}
+
+.recommendations-table th,
+.recommendations-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.recommendations-table th {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* Largeur proportionnelle des colonnes */
+.recommendations-table th:nth-child(1),
+.recommendations-table td:nth-child(1) {
+  width: 20%; /* Ferme */
+}
+
+.recommendations-table th:nth-child(2),
+.recommendations-table td:nth-child(2) {
+  width: 20%; /* Date */
+}
+
+.recommendations-table th:nth-child(3),
+.recommendations-table td:nth-child(3) {
+  width: 20%; /* Produit / Culture */
+}
+
+.recommendations-table th:nth-child(4),
+.recommendations-table td:nth-child(4) {
+  width: 40%; /* Recommandation */
+}
+
+.recommendations-table tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+.recommendations-table tr:hover td {
+  background-color: #e0f2e9;
+}
+
+/* Boutons */
+.report-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.btn-download,
+.btn-print {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #4cafef;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-print {
+  background: #4caf50;
+}
+
+.btn-download:hover {
+  background: #3c94d6;
+}
+
+.btn-print:hover {
+  background: #3a9e42;
+}

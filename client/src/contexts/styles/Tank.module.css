@@ -1,0 +1,63 @@
+.tankCard{
+    height: 5rem;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    gap:5vh;
+
+}
+.tankCardContainer{
+    padding:2vh;
+    background-color: #ecebeb;
+    height: 25vh;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap:2vh;
+    overflow-y: scroll;
+}
+.tankComponent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:5px;
+    margin:5px;
+}
+.headerTankComponent{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh;
+}
+.btnContainer{
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width:480px){
+    .tankCardContainer{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .headerTankComponent{
+        flex-direction: column;
+        height: 15vh;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .tankCardContainer{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .headerTankComponent{
+        flex-direction: column;
+        height: 15vh;
+    }
+}
+/* dark mode */
+.dark{
+    background-color: #1e1e2f; 
+    color:#81c784;
+}
+.darkContainer{
+  background-color: #1e293b;
+    color:#81c784;
+}

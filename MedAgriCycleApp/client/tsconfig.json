@@ -1,0 +1,18 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "components/ui/tankDetailChart.jsx", 
+    "components/ui/tankPieChart.jsx", 
+    "components/ui/tankDetailChart.jsx"  
+  ]
+}

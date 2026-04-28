@@ -1,0 +1,37 @@
+.category{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2vh;
+    background-color: var(--white);
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.categoryContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.selected{
+    background-color: var(--sideBarSelected);
+    color:var(--fontSideBarCategorySelected);
+}
+@media (min-width: 481px) and (max-width: 768px) {
+}
+@media (min-width: 769px){
+    .category{
+        width: 100%;
+        justify-content:start;
+        padding:10%;
+    }
+    .category:hover{
+        background-color: var(--btnHover);
+    }
+    .selected:hover{
+        background-color: var(--sideBarSelected);
+        color:var(--fontSideBarCategorySelected);
+    }
+}

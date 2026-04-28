@@ -1,0 +1,137 @@
+/* ─────────────────────────────────────────
+   Base styles (mobile-first, < 481px)
+───────────────────────────────────────── */
+
+.body {
+  padding-top: 7vh; /* for placement of the farm select bar*/
+  padding-bottom: 10%; /* for placement of the barSide*/
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: auto;
+}
+
+.head-section {
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-split {
+  display: flex;
+  width: 100%;
+  flex-direction: column; /* empilé sur mobile */
+  align-items: center;
+}
+
+/* .vertical-split {
+  width: 100%;            
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+.section {
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.top-left {
+  background-color: #fafaf7;
+  height: 32vh;
+}
+
+.top-right {
+  background-color: #fafaf7;
+  height: 32vh;
+}
+
+.bottom {
+  background-color: #f0fff0;
+  height: 50vh;
+}
+
+.horizontal-divider {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-divider {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #ccc;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.bottom-section {
+  height: 50vh;
+  max-height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  position: relative;
+  overflow-y: auto;
+}
+
+.liste-produit {
+  overflow-y: scroll;
+  height: 23vh;
+}
+
+
+/* ─────────────────────────────────────────
+   Tablette portrait (481px – 768px)
+───────────────────────────────────────── */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .body {
+    margin-left: 1vh;
+    margin-right: 1vmin;
+  }
+
+  .horizontal-split {
+    flex-direction: row; /* côte à côte dès la tablette */
+  }
+
+  .vertical-split {
+    width: 50%;
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   Tablette paysage / desktop (≥ 769px)
+───────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .horizontal-split {
+    flex-direction: row;
+    height: 50%;
+  }
+  .body{
+    position: relative;
+    padding-top: unset;
+    padding-bottom: unset;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .vertical-split {
+    width: 50%;
+  }
+}

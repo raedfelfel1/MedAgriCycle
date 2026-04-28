@@ -1,0 +1,100 @@
+/* Variables */
+:root {
+  --primary-green: #2e7d32;
+  --secondary-green: #4caf50;
+  --light-green: #e8f5e9;
+  --text-dark: #263238;
+  --text-light: #607d8b;
+  --border-color: #c8e6c9;
+}
+
+/* Conteneur principal */
+.product-form-container {
+  max-width: 900px;
+  margin: 2rem 42vmin;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: hsl(125, 39%, 94%);
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.1);
+}
+
+/* Titre */
+.form-title {
+  color: var(--primary-green);
+  margin-bottom: 2rem !important;
+  display: flex;
+  align-items: center;
+  font-weight: 600 !important;
+}
+
+.title-icon {
+  margin-right: 0.5rem;
+  font-size: 1.8rem !important;
+  color: var(--secondary-green);
+}
+
+/* Séparateurs */
+.section-divider {
+  margin: 1.5rem 0 !important;
+  color: var(--text-light) !important;
+  font-size: 0.875rem !important;
+}
+
+.section-divider::before,
+.section-divider::after {
+  border-color: var(--border-color) !important;
+}
+
+/* Champs de formulaire */
+.MuiTextField-root {
+  margin-bottom: 1rem !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px !important;
+}
+
+.MuiInputLabel-root {
+  color: var(--text-light) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-green) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-green) !important;
+}
+
+/* Icônes */
+.MuiInputAdornment-root svg {
+  color: var(--secondary-green);
+}
+
+/* Bouton de soumission */
+.submit-button {
+  margin-top: 0.2rem !important;
+  padding: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  background-color: var(--primary-green) !important;
+  transition: all 0.3s ease !important;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-green) !important;
+  transform: translateY(-2px);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.4rem !important;
+  }
+}

@@ -1,0 +1,138 @@
+/* ===== Variables CSS ===== */
+:root {
+  --blanc: #ffffff;
+  --vert-clair: hsl(125, 39%, 94%);
+  --vert-moyen: #a5d6a7;
+  --vert-fonce: #81c784;
+  --texte-fonce: #2e3b2e;
+  --texte-clair: #5a6d5a;
+  --bordure: #e0eae0;
+}
+
+
+.global{
+  overflow: scroll;
+}
+/* ===== Structure de base ===== */
+.titre-tableau, .liste-produit {
+  display: grid;
+  grid-template-columns: repeat(4, 25vh); 
+  gap: 1vmin;
+  width: fit-content;
+  margin: 2vmin auto;
+}
+
+/* ===== En-tête ===== */
+.titre-tableau div {
+  height: 7vh; 
+  width: 25vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--vert-clair);
+  color: var(--texte-fonce);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2px solid var(--bordure);
+  padding: 0 1vmin;
+  text-align: center;
+}
+
+/* ===== Lignes de produits ===== */
+.liste-produit > div {
+  height: 7vh;
+  width: 25vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #C8E6C9;
+  color: var(--texte-fonce);
+  font-size: 0.9rem;
+  padding: 0 0.5vmin;
+  border-bottom: 1px solid var(--bordure);
+  transition: background-color 0.2s ease;
+}
+
+/* ===== Styles spécifiques ===== */
+.nom, .titre_nom {
+  justify-content: flex-start;
+  padding-left: 2vmin;
+}
+
+.date, .titre_ajout {
+  color: var(--texte-clair);
+  font-size: 0.85rem;
+}
+
+.categorie, .titre_categorie {
+  color: var(--vert-fonce);
+  font-weight: 500;
+}
+
+/* ===== Boutons ===== */
+.action {
+  display: flex;
+  gap: 1vmin;
+  justify-content: center;
+}
+
+.afficher-fiche button {
+  background-color: var(--vert-moyen);
+  color: white;
+  border: none;
+  padding: 0.6vmin 1.5vmin;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5vmin;
+}
+
+.afficher-fiche button:hover {
+  background-color: var(--vert-fonce);
+}
+
+/* ===== Effet de survol ===== */
+.liste-produit:hover > div {
+  background-color: var(--vert-clair);
+}
+
+.header-left {
+  
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+/* ===== Version mobile ===== */
+@media (max-width: 1024px) {
+  .titre-tableau, .liste-produit {
+    grid-template-columns: repeat(2, 25vh);
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  
+  .titre-tableau::after, 
+  .liste-produit::after {
+    content: '';
+    width: 100vw;
+  }
+}
+
+.en-tete{
+    height:10vh;
+    background-color:rgba(127, 255, 212, 0);
+    align-items:self-start;
+    display: flex;
+   justify-content: space-between;
+   padding: 0 20px;
+   margin-bottom: 20px;
+}
+
+.en-tete h2{
+    margin-bottom:0.2vh;
+    margin-top:0vh;
+}
+

@@ -1,0 +1,41 @@
+.top-left-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes */
+  grid-template-rows: 1fr 1fr; /* 2 lignes */
+  gap: 1vmin; /* Espace entre les carrés */
+  height: 100%;
+  width: 100%;
+}
+
+/* ===== Styles des carrés ===== */
+.temperature, .humidite, .ph, .moisture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vmin;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: clamp(0.8rem, 1.5vmin, 1.2rem);
+  font-weight: bold;
+  color: #333;
+}
+
+.temperature {
+  background-color: hsl(125, 39%, 94%); 
+}
+
+.humidite {
+  background-color: hsl(125, 39%, 94%); 
+}
+
+.ph {
+  background-color: hsl(125, 39%, 94%); 
+}
+
+.moisture {
+  background-color: hsl(125, 39%, 94%); 
+}
+/* ===== Suppression des anciens styles ===== */
+.temperature-humidite, .ph-moisture {
+  display: contents; /* Supprime les conteneurs intermédiaires */
+}
+     

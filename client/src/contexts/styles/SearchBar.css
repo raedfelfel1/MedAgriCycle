@@ -1,0 +1,23 @@
+.search-bar-container {
+  justify-content:center;
+  align-items:center;
+  padding:0;
+}
+
+.search-input {
+  background-color: #fff;
+  border-radius: 4px;
+  height:7vh;
+}
+
+.search-input fieldset {
+  border-color: #e0e0e0;
+}
+
+.search-input:hover fieldset {
+  border-color: #bdbdbd;
+}
+
+.search-input.Mui-focused fieldset {
+  border-color: #4caf50;
+}

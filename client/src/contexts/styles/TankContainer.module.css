@@ -1,0 +1,27 @@
+/* WaterTank.module.css */
+
+.waterTank {
+  position: relative;
+  width: clamp(60px, 8vw, 100px);
+  height: clamp(160px, 20vh, 240px);
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.waterFill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: height 0.4s ease;
+}
+
+.waterLevelIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}

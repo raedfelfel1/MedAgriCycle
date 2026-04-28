@@ -1,0 +1,93 @@
+:root{
+    --white:#ffff;
+    --sideBarSelected: #c8dcf3;
+    --categoryInfo: rgba(209, 209, 216, 0.205);
+    --fontSideBar:var(--white);
+    --fontSideBarCategorySelected:#1a73e8;
+    --adminBarSideWidthComputer:20%;
+    --adminBarSideWidthPhone:11%;
+    --popUpColor:green;
+    --btnHover:rgba(157, 157, 160, 0.205);
+    --borderColor:rgb(207, 202, 202);
+    --CardLabel:hsl(125, 39%, 94%);
+    --CardData:#C8E6C9;
+}
+.actionBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding-left: 1%;
+}
+.back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1vh;
+    cursor: pointer;
+}
+.adminPan{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100vh;
+    width: 100%;
+}
+.main{
+    height: 100%;
+    overflow-y: auto;
+}
+.popUp{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--popUpColor);
+    left:0;
+    bottom: 0;
+    height: 10vh;
+    width: 70%;
+    bottom:calc(-1% + var(--adminBarSideWidthPhone));
+    border: 1px var(--borderColor) solid;
+}  
+.filtersBtns{
+    height: 20vh;
+    min-height: fit-content;
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap:5%;
+}
+.btnSelect,.btnInput{
+    height: 50%;
+    margin: unset;
+    min-width: fit-content;
+    min-height: fit-content;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+@media (min-width: 769px){
+    .adminPan{
+        flex-direction: unset;
+    }
+    .main{
+        width: 100%;
+    }  
+    .popUp{
+        height: 10vh;
+        width: 20%;
+        left:0;
+        bottom:0;
+    }
+    .filtersBtns{
+        display: flex;
+        width:100%;
+        height: 15%;
+        padding: unset;
+        align-items: center;
+        justify-content: end;
+        gap:1%;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,170 @@
+.boardContainer {
+  background-color: #f9fafb;
+  width: 100vw;
+  margin: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30%;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1vh;
+}
+
+.chartsFlex {
+  display: flex;
+  gap: 2rem;
+}
+
+.chartCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.farmSelector {
+  width: 50%;
+}
+
+#farm-select {
+  color: rgb(142, 142, 154);
+  font-weight: bold;
+}
+
+.button {
+  margin-left: 600px;
+}
+
+.boardPageContainer {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  height: 100vh;
+  justify-content: start;
+  overflow-y: scroll;
+}
+
+.combinedChartContainer {
+  width: 50%;
+}
+
+/* ========== Responsive ========== */
+
+/* ── Mobile : ≤ 480px ── */
+@media screen and (max-width: 480px) {
+  .boardContainer {
+    margin-left: 0;
+    min-height: 50vh;
+    padding-left: 0;
+  }
+
+  .chartsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .chartCard {
+    margin-right: 2vmin;
+    width: 90vw;
+  }
+  .optionsBtns{
+    width: 90vw;
+    padding: 5%;
+  }
+  .headerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    padding: 10%;
+    width: 100%;
+    gap:20%;
+  }
+}
+
+/* ── Tablette : 481px – 768px ── */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .boardContainer {
+    min-height: 50vh;
+    padding-left: 0;
+  }
+  .headerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    padding: 10%;
+    width: 100%;
+    gap:20%;
+  }
+  .optionsBtns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  .combinedChartContainer{
+    min-width: 90vw;
+  }
+  .chartsGrid {
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    max-width:100%;
+    gap: 1vh;
+  }
+
+  .chartCard {
+    width: 90vw;
+    max-width: 100%;
+  }
+}
+
+/* ── Desktop : ≥ 769px ── */
+@media screen and (min-width: 769px) {
+  .boardPageContainer {
+    width: 80%;
+  }
+  .boardContainer {
+    min-height: 50vh;
+    max-height: 100%;
+    padding-left: 0;
+  }
+  .headerContainer{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    gap:5%;
+    width: 100%;
+    padding: 2%;
+  }
+  .optionsBtns{
+    width: 50vw;
+    display: flex;
+    gap:5%
+  }
+  .chartsGrid {
+    grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
+    max-width:100%;
+    gap: 1vh;
+  }
+
+  .chartCard {
+    width: 70vw;
+    max-width: 100%;
+  }
+}

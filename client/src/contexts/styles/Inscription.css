@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fefefe;
+}
+
+.formulaire-conteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+.formulaire {
+  background: #ffffff;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.titre-formulaire {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.etapes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.etape {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.etape.active {
+  background-color: rgb(43, 232, 122);
+  border-color: rgb(43, 232, 122);
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.message-erreur {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.boutons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  margin: 0 0.25rem;
+  background-color: rgb(43, 232, 122);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(43, 232, 122);
+}

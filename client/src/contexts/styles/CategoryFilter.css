@@ -1,0 +1,23 @@
+.category-filter-container {
+  justify-content:center;
+  flex-direction: column;
+  height:10vh;
+}
+
+.category-select .MuiOutlinedInput-root {
+  background-color: #fff;
+  border-radius: 4px;
+  height:7vh;
+}
+
+.category-select .MuiOutlinedInput-notchedOutline {
+  border-color: #e0e0e0;
+}
+
+.category-select:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #bdbdbd;
+}
+
+.category-select.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #4caf50;
+}

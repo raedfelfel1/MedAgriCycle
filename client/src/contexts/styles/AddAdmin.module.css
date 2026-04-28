@@ -1,0 +1,48 @@
+.addAdminMainContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap:1%;
+    padding: 1%;
+    height: fit-content;
+    padding-top: 3vh;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: inherit;
+    gap:1%;
+}
+.inputContainer input{
+    margin-top: unset;
+}
+.clickable{
+    cursor:pointer;
+}
+.btnContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3%;
+    width: 100%;
+    flex-grow: 1;
+}
+@media(min-width:769px){
+    .addAdminMainContainer{
+        padding: 1%;
+        height: fit-content;
+        flex-direction: row-reverse;
+    }
+    .btnContainer{
+        flex-direction: column;
+        justify-content: end;
+        gap:1%;
+        width: unset;
+        flex-grow: unset;
+    }
+}

@@ -1,0 +1,182 @@
+.showTankContainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.updateInput{
+    width: fit-content;
+    text-align: center;
+}
+.headerTankContainer{
+    position:relative;
+    background-color: #f8fafc;
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.informationDataTankContainer,.headerTankContainer,.partTitle{
+    width: 100%;
+}
+.informationDataTankContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #e2e8f0;
+}
+.linkedProductContainer{
+    overflow-y: scroll;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4 ,1fr);
+    gap:3vh;
+    padding: 2vh;
+}
+.productCard{
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    height: 20vh;
+    width: 20vw;
+    border-radius: 25px;
+    padding: 2vh;
+    box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+.productCard:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.backBtnContainer{
+    position:absolute;
+    left:1vh;
+}
+.BtnContainer{
+    position:absolute;
+    display: flex;
+    gap:1%;
+    right:1vh;
+}
+.partTitle{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+}
+.headerTankContainer,.partTitle{
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    height: 7vh;
+}
+.ProductReplaceText{
+    grid-row: 1;
+    grid-column: 3;
+    text-align: center;
+    color: #ef4444;
+}
+.deleteLinkProductBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5vw;
+    position:absolute;
+    right:2vh;
+    bottom: 2vh;
+}
+.coreTankContainer{
+    display: flex;
+    justify-content: center;
+
+}
+.informationTankContainer,.IrrigationComponentContainer{
+    position: relative;
+    width: 40vw;
+}
+.IrrigationComponentContainer{
+    border-left: 1px solid #e2e8f0;
+
+}
+
+@media(max-width:480px){
+    .showTankContainer{
+        width: 100vw;
+        align-items: unset;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .informationTankContainer{
+        display: flex;
+        width: 100vw;
+    }
+    .coreTankContainer{
+        flex-direction: column;
+        height: auto;
+    }
+    .IrrigationComponentContainer{
+        width: 100vw;
+        border-left:unset;
+    }
+    .linkedProductContainer{
+        width: 100vw;
+        height: auto;
+        grid-template-columns: 1fr;
+        overflow-y: initial;
+        padding-bottom: 13vh; /* barside + padding*/
+    }
+    .productCard{
+        height: 20vh;
+        width: 100%;
+    }
+    .deleteLinkProductBtn{
+        right:5vh;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .showTankContainer{
+        height: 100vh;
+        position: relative;
+        overflow-x: auto;
+    }
+    .headerTankContainer{
+        position: sticky;
+        top:0;
+        z-index:1000;
+    }
+    .coreTankContainer{
+        flex-direction: column;
+        width: 100vw;
+        height: auto;
+    }
+    .informationDataTankContainer{
+        width: 100vw;
+    }
+    .linkedProductContainer{
+        grid-template-columns: repeat(2,1fr);
+        padding-bottom: 33vh; /* barside + padding*/
+
+    }
+    .productCard{
+        height: 20vh;
+        width: 40vw;
+    }
+    .deleteLinkProductBtn{
+        right:3vh;
+    }
+    .IrrigationComponentContainer{
+        border-left:unset;
+    }
+}
+.dark{
+    background-color: #1e1e2f; 
+    color:#81c784;
+}

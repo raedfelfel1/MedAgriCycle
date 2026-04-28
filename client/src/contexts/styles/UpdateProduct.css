@@ -1,0 +1,69 @@
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #2e7d32;
+  --text-dark: #2f2f2f;
+  --background: #fdfdfd;
+  --radius: 0.75rem;
+}
+
+/* Conteneur principal */
+.update-product-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--background);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Titre */
+.form-title {
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.title-icon {
+  margin-right: 0.75rem;
+  color: var(--primary-color);
+}
+
+/* Champs de formulaire */
+.MuiTextField-root {
+  margin-bottom: 1rem;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: var(--radius);
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color);
+}
+
+.MuiInputAdornment-root svg {
+  color: var(--primary-color);
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .update-product-container {
+    padding: 1.2rem;
+    margin: 1rem;
+  }
+}
