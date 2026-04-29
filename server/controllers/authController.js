@@ -126,9 +126,9 @@ exports.login = async (req, res) => {
     if (!isMatch) {
       return res.status(403).json({ message: "Mot de passe incorrect." });
     }
-    if (!user.emailVerified) {
-      return res.status(403).json({ message: "Veuillez vérifier votre email avant de vous connecter." });
-    }
+    //if (!user.emailVerified) {
+      //return res.status(403).json({ message: "Veuillez vérifier votre email avant de vous connecter." });
+    //}
     const token = jwt.sign(
       { userId: user._id, contact: user.contact },
       process.env.JWT_SECRET,
