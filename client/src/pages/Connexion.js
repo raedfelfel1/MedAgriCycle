@@ -47,14 +47,8 @@ const Connexion = ({children}) => {
       const data = await response.json();
 
       if (response.ok) {
-        // Envoie le code MFA
-        await fetch(`${API_URL}/auth/mfa/send`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: result.user.email }),
-        });
-        setPendingEmail(result.user.email);
-        setMfaStep(true);
+        authLogin(data.token, data.user);
+        navigate("/farm");
       } else {
         alert(data.message || "Échec de la connexion Google.");
       }
