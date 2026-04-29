@@ -78,7 +78,8 @@ exports.forgotPassword = async (req, res) => {
 
     return res.status(200).json({ message: "Si cet email existe, un lien a été envoyé." });
   } catch (err) {
-    return res.status(500).json({ message: "Erreur serveur." });
+    console.error("Erreur forgotPassword :", err);
+    return res.status(500).json({ message: "Erreur serveur : impossible d'envoyer l'email de réinitialisation." });
   }
 };
 

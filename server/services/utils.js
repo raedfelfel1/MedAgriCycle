@@ -1,9 +1,11 @@
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // TLS
   auth: {
-    user: process.env.EMAIL_USER,     
+    user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   }
 });
@@ -42,26 +44,31 @@ const sendVerificationEmail = async (to, token) => {
   });
 };
 const sendResetPasswordEmail = async (to, token) => {
-  const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${token}`;
-  await transporter.sendMail({
-    from: `"MedAgriCycle" <${process.env.EMAIL_USER}>`,
-    to,
-    subject: 'Réinitialisation de mot de passe',
-    html: `
-      <h2>Réinitialisation de mot de passe</h2>
-      <p>Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe :</p>
-      <a href="${resetUrl}" style="
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 24px;
-        text-decoration: none;
-        border-radius: 6px;
-        display: inline-block;
-      ">Réinitialiser mon mot de passe</a>
-      <p>Ce lien expire dans 30 minutes.</p>
-      <p>Si vous n'avez pas demandé cette réinitialisation, ignorez cet email.</p>
-    `
-  });
+  try {
+    const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${token}`;
+    await transporter.sendMail({
+      from: `"MedAgriCycle" <${process.env.EMAIL_USER}>`,
+      to,
+      subject: 'Réinitialisation de mot de passe',
+      html: `
+        <h2>Réinitialisation de mot de passe</h2>
+        <p>Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe :</p>
+        <a href="${resetUrl}" style="
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 24px;
+          text-decoration: none;
+          border-radius: 6px;
+          display: inline-block;
+        ">Réinitialiser mon mot de passe</a>
+        <p>Ce lien expire dans 30 minutes.</p>
+        <p>Si vous n'avez pas demandé cette réinitialisation, ignorez cet email.</p>
+      `
+    });
+  } catch (error) {
+    console.error('Erreur envoi email réinitialisation:', error.message);
+    throw error;
+  }
 };
 
 const getCurrentFamId =  (req,res)=>{
