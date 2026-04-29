@@ -129,15 +129,12 @@ const Connexion = ({children}) => {
       const data = await response.json();
 
       if (response.ok) {
-        // Envoie le code MFA
-        await fetch(`${API_URL}/auth/mfa/send`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: data.user.email || login }),
-        });
-        setPendingEmail(data.user.email || login);
-        setMfaStep(true);
-      } else {
+        authLogin(data.token, data.user);
+        navigate("/farm");
+      }
+        //setPendingEmail(data.user.email || login);
+        //setMfaStep(true);
+       else {
         alert(data.message || "Échec de la connexion.");
       }
     } catch (error) {
