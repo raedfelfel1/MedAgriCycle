@@ -23,20 +23,17 @@ const UserSchema = new mongoose.Schema({
   age:{
     type:String,
   },
-  phone:{
-    type:String,
-    required:false,
-    unique:true,
-    sparse: true, 
-    validate: {
-      validator: function (v) {
-       if (!v) return true;
-
+ phone: {
+  type: String,
+  required: false,
+  validate: {
+    validator: function (v) {
+      if (!v) return true;
       return phoneRegex.test(v);
     },
     message: props => `${props.value} n'est pas un numéro.`
   }
-  },
+},
 
   email: {
     type: String,
