@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
     type:String,
     required:false,
     unique:true,
-    default: null,
+    sparse: true, 
     validate: {
       validator: function (v) {
        if (!v) return true;
